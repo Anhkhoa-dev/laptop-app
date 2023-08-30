@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+  
+  .container 
+    h1 Danh sách laptop
+    a.btn.btn-primary(href='/laptop/create') Create
+
+
+    table.table.table-striped
+        thead 
+            tr  
+                th(scope='col') ID
+                th(scope='col') Name 
+                th(scope='col') TechSpecs
+                th(scope='col') Price
+                th(scope='col') Image
+                th(scope='col') Action
+        tbody 
+            if books != ''
+                each item in laptops
+                    tr 
+                        td(scope='row')= item._id
+                        td= item.name
+                        td= item.techSpecs
+                        td= item.price
+                        td 
+                            img(src=`/images/${item.photo}`, alt=item.name, width="100px") 
+                        td 
+                            a.btn.btn-warning.me-2(href=`/laptop/update/${item.id}`) Edit
+                            a.btn.btn-warning(href=`/book/delete/${item.id}`) Delete
+            else
+                tr 
+                    td(colspan=5) No data
+
+        
