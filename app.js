@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 4000
 
 // khai báo kết nối mongoose
 dotenv.config()
-const URI =`mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@cluster2023.nprrcey.mongodb.net/myapp?retryWrites=true&w=majority`
+const URI =`mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@cluster2023.nprrcey.mongodb.net/myapp?retryWrites=true&w=majority&ssl=true`
 mongoose.connect(URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
